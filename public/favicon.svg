@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lucy in the Sky Liverpool skyline badge">
+  <rect width="64" height="64" rx="15" fill="#fff8e9"/>
+  <circle cx="32" cy="32" r="27.5" fill="#fff8e9" stroke="#2b1627" stroke-width="3"/>
+  <path d="M10 43h44M13 42V31h9v11m3 0V24h7v18m-3-18v-7m-3 4h6m4 21V33h8v9m3 0V28h6v14" fill="none" stroke="#2b1627" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="28.5" cy="29" r="2.4" fill="#fff36b" stroke="#2b1627" stroke-width="1.8"/>
+  <path d="M12 47c7-3 12 3 19 0s12 3 21 0M14 51c6-2 11 2 17 0s11 2 19 0" fill="none" stroke="#2b1627" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="m48 12 1.8 4.9 5.1-1.6-3.2 4.2 4.3 3-5.3-.5-1.4 5.1-1.5-5.1-5.3.5 4.3-3-3.2-4.2 5.1 1.6L48 12Z" fill="#ff4f9a" stroke="#2b1627" stroke-width="1.2" stroke-linejoin="round"/>
+</svg>
