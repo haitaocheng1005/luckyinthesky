@@ -18,6 +18,7 @@ import {
   X,
 } from 'lucide-react';
 import { LogoMark } from './components/LogoMark';
+import { FallingCafeDoodles } from './components/FallingCafeDoodles';
 import { businessHours } from './data/business';
 import { featuredMenuItems, menuCategories, type MenuCategory } from './data/menu';
 import { MenuPage } from './pages/MenuPage';
@@ -28,6 +29,13 @@ const mapsUrl =
 const baseUrl = import.meta.env.BASE_URL;
 const menuUrl = `${baseUrl}menu/`;
 const assetUrl = (filename: string) => `${baseUrl}assets/${filename}`;
+const tickerItems = [
+  'All-day brunch',
+  'Birthday cake matcha',
+  'Proper Scouse',
+  'Fluffy pancakes',
+  'Good mood coffee',
+] as const;
 
 const reviewThemes = [
   {
@@ -200,6 +208,8 @@ export function App(): ReactElement {
         </button>
       </header>
 
+      <FallingCafeDoodles />
+
       <main id="main-content" className={isMenuPage ? 'full-menu-page' : undefined}>
         {isMenuPage ? (
           <MenuPage />
@@ -272,17 +282,21 @@ export function App(): ReactElement {
         </section>
 
         <section className="flavour-ticker" aria-label="Cafe specialities">
-          <div>
-            <span>All-day brunch</span>
-            <b aria-hidden="true">✦</b>
-            <span>Birthday cake matcha</span>
-            <b aria-hidden="true">✦</b>
-            <span>Proper Scouse</span>
-            <b aria-hidden="true">✦</b>
-            <span>Fluffy pancakes</span>
-            <b aria-hidden="true">✦</b>
-            <span>Good mood coffee</span>
-            <b aria-hidden="true">✦</b>
+          <div className="flavour-ticker-track">
+            {[0, 1].map((copyIndex) => (
+              <div
+                className="flavour-ticker-set"
+                aria-hidden={copyIndex === 1 ? true : undefined}
+                key={copyIndex}
+              >
+                {tickerItems.map((item) => (
+                  <span className="flavour-ticker-item" key={item}>
+                    <span>{item}</span>
+                    <b aria-hidden="true">✦</b>
+                  </span>
+                ))}
+              </div>
+            ))}
           </div>
         </section>
 
@@ -373,9 +387,10 @@ export function App(): ReactElement {
             aria-label="Menu favourites, scroll horizontally"
             aria-live="polite"
             tabIndex={0}
+            data-reveal
           >
             {visibleMenuItems.map((item) => (
-              <article className={'menu-card tone-' + item.tone} key={item.id} data-reveal>
+              <article className={'menu-card tone-' + item.tone} key={item.id}>
                 <div className="menu-card-top">
                   <span>{item.category}</span>
                   {item.badge && <small>{item.badge}</small>}
