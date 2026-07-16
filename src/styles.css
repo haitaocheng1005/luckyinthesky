@@ -631,7 +631,7 @@ h3 {
   top: -90px;
   width: 56px;
   opacity: 0;
-  --doodle-opacity: 0.52;
+  --doodle-opacity: 0.44;
   color: var(--ink);
   filter: drop-shadow(3px 4px 0 color-mix(in srgb, var(--ink) 34%, transparent));
   animation: cafe-doodle-fall 20s linear infinite;
@@ -733,6 +733,28 @@ h3 {
   --doodle-end-x: -76px;
   --doodle-mid-spin: -140deg;
   --doodle-spin: -280deg;
+}
+
+.falling-doodle:nth-child(7) {
+  left: 29%;
+  width: 54px;
+  animation-duration: 21s;
+  animation-delay: -5s;
+  --doodle-mid-x: -38px;
+  --doodle-end-x: 26px;
+  --doodle-mid-spin: 125deg;
+  --doodle-spin: 250deg;
+}
+
+.falling-doodle:nth-child(8) {
+  left: 68%;
+  width: 60px;
+  animation-duration: 23s;
+  animation-delay: -15s;
+  --doodle-mid-x: 46px;
+  --doodle-end-x: -22px;
+  --doodle-mid-spin: -135deg;
+  --doodle-spin: -270deg;
 }
 
 @keyframes cafe-doodle-fall {
@@ -3357,10 +3379,10 @@ h3 {
 
   .falling-doodle {
     width: 46px;
-    --doodle-opacity: 0.4;
+    --doodle-opacity: 0.32;
   }
 
-  .falling-doodle:nth-child(n + 5) {
+  .falling-doodle:nth-child(n + 7) {
     display: none;
   }
 }

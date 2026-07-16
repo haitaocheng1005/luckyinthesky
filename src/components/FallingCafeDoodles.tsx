@@ -1,11 +1,21 @@
 import type { ReactElement } from 'react';
 
-type DoodleKind = 'coffee' | 'croissant' | 'matcha' | 'cake' | 'sandwich' | 'pancakes';
+type DoodleKind =
+  | 'coffee'
+  | 'croissant'
+  | 'bagel'
+  | 'matcha'
+  | 'teapot'
+  | 'cake'
+  | 'sandwich'
+  | 'pancakes';
 
 const doodles: ReadonlyArray<{ id: string; kind: DoodleKind }> = [
   { id: 'coffee-left', kind: 'coffee' },
   { id: 'croissant-left', kind: 'croissant' },
+  { id: 'bagel-centre', kind: 'bagel' },
   { id: 'matcha-centre', kind: 'matcha' },
+  { id: 'teapot-right', kind: 'teapot' },
   { id: 'cake-right', kind: 'cake' },
   { id: 'sandwich-right', kind: 'sandwich' },
   { id: 'pancakes-centre', kind: 'pancakes' },
@@ -45,6 +55,31 @@ function DoodleIcon({ kind }: { kind: DoodleKind }): ReactElement {
         <circle className="doodle-accent" cx="27" cy="40" r="2" />
         <circle className="doodle-accent" cx="37" cy="47" r="2" />
         <path d="M14 18h36" />
+      </svg>
+    );
+  }
+
+  if (kind === 'bagel') {
+    return (
+      <svg viewBox="0 0 64 64" focusable="false">
+        <ellipse className="doodle-fill-yellow" cx="32" cy="32" rx="24" ry="18" />
+        <ellipse className="doodle-fill-cream" cx="32" cy="32" rx="9" ry="7" />
+        <path className="doodle-fill-green" d="M11 36c9 5 33 7 43-1-7 12-35 17-43 1Z" />
+        <path d="M19 22l3 2M30 18l2 3M43 21l-3 2M49 29l-3 1" />
+        <circle className="doodle-accent" cx="18" cy="31" r="1.8" />
+      </svg>
+    );
+  }
+
+  if (kind === 'teapot') {
+    return (
+      <svg viewBox="0 0 64 64" focusable="false">
+        <path className="doodle-fill-pink" d="M18 27h29v12c0 9-6 15-15 15s-14-6-14-15V27Z" />
+        <path className="doodle-fill-cream" d="M23 27c1-7 17-7 19 0H23Z" />
+        <path d="M27 19h11M32 19v-5" />
+        <path d="M18 31 7 38l11 3M47 31h3a9 9 0 0 1 0 18h-5" />
+        <path d="M25 11c-4-4 4-6 0-10M37 11c-4-4 4-6 0-10" />
+        <circle className="doodle-accent" cx="33" cy="39" r="3" />
       </svg>
     );
   }
