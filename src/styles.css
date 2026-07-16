@@ -213,21 +213,30 @@ h3 {
 }
 
 .logo-words {
-  display: grid;
-  line-height: 0.82;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3px;
+  line-height: 1;
 }
 
 .logo-words strong {
+  display: block;
   font-family: 'Fredoka', sans-serif;
   font-size: 1.45rem;
+  line-height: 0.9;
   letter-spacing: -0.05em;
 }
 
 .logo-words small {
+  display: block;
   margin-left: 2px;
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.12em;
+  line-height: 1;
+  white-space: nowrap;
   text-transform: uppercase;
 }
 
@@ -631,7 +640,7 @@ h3 {
   top: -90px;
   width: 56px;
   opacity: 0;
-  --doodle-opacity: 0.44;
+  --doodle-opacity: 0.9;
   color: var(--ink);
   filter: drop-shadow(3px 4px 0 color-mix(in srgb, var(--ink) 34%, transparent));
   animation: cafe-doodle-fall 20s linear infinite;
@@ -3379,7 +3388,7 @@ h3 {
 
   .falling-doodle {
     width: 46px;
-    --doodle-opacity: 0.32;
+    --doodle-opacity: 0.86;
   }
 
   .falling-doodle:nth-child(n + 7) {
